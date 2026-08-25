@@ -1,0 +1,74 @@
+{
+  "name": "sky",
+  "label": "Sky",
+  "description": "Soft pastel / nursery. Pale powder-blue paper, gentle mint greens, dusty-blue markers shaped like little balloons, a coral heart for home. Airy and calm. Rounded Baloo 2 throughout.",
+  "palette": {
+    "page": "#eef1f2",
+    "land": "#f3f5f6",
+    "water": "#c4dae6",
+    "green": "#cfe0cb",
+    "coastline": "#a9cad9",
+    "roads": {
+      "motorway": "#dcb7a3",
+      "primary": "#e2d3c6",
+      "secondary": "#e0dcd6",
+      "residential": "#eae6e0",
+      "service": "#f0ede8",
+      "path": "#e4e0d9"
+    },
+    "playground_marker": "#7392b4",
+    "playground_marker_text": "#ffffff",
+    "home_marker": "#d98c78",
+    "text": "#3f4a55",
+    "muted": "#8b96a1",
+    "annotation_box": "#f7f9fa",
+    "annotation_line": "#cdd9e0",
+    "border": "#a9cad9"
+  },
+  "road_weights": {
+    "motorway": 1.1,
+    "primary": 0.9,
+    "secondary": 0.65,
+    "residential": 0.45,
+    "service": 0.3,
+    "path": 0.2
+  },
+  "type": {
+    "title_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "label_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "body_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "title_weight": "600",
+    "title_tracking": 0.5,
+    "title_uppercase": false,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.2,
+    "playground_stroke": "#eef1f2",
+    "playground_stroke_w": 1.4,
+    "icon_color": "#ffffff",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "balloon",
+    "badge_outline_color": "#d98c78",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "numbered": false,
+    "home_style": "heart",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.7,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "thin",
+    "weight": 0.8,
+    "inset": 7.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

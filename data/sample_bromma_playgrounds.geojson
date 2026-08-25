@@ -1,0 +1,541 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "home": {
+      "lat": 59.3273583,
+      "lon": 17.925606,
+      "display_name": "18, Rättviksvägen, Nockeby, Bromma stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 167 74, Sverige"
+    },
+    "count": 21,
+    "search_radius_m": 1000,
+    "source": "OpenStreetMap via Overpass API",
+    "license": "ODbL - © OpenStreetMap contributors"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.933943,
+          59.326736
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 4648413053,
+        "name": "",
+        "lat": 59.326736,
+        "lon": 17.933943,
+        "distance_m": 478,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/node/4648413053"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.930136,
+          59.331319
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 138575212,
+        "name": "",
+        "lat": 59.331319,
+        "lon": 17.930136,
+        "distance_m": 510,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/138575212"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.92844,
+          59.322714
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 11964328304,
+        "name": "",
+        "lat": 59.322714,
+        "lon": 17.92844,
+        "distance_m": 541,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/node/11964328304"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.934816,
+          59.328728
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 678963935,
+        "name": "Lekparken Operetten",
+        "lat": 59.328728,
+        "lon": 17.934816,
+        "distance_m": 544,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/678963935"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.921221,
+          59.333079
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 141563451,
+        "name": "Kaffekannan",
+        "lat": 59.333079,
+        "lon": 17.921221,
+        "distance_m": 683,
+        "surface": "",
+        "access": "yes",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/141563451"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.917093,
+          59.322609
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 4065873760,
+        "name": "",
+        "lat": 59.322609,
+        "lon": 17.917093,
+        "distance_m": 716,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/node/4065873760"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.912063,
+          59.329096
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 137944829,
+        "name": "Rimiparken",
+        "lat": 59.329096,
+        "lon": 17.912063,
+        "distance_m": 792,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/137944829"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.93224,
+          59.334029
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 138574314,
+        "name": "Lekplatsen Skeden",
+        "lat": 59.334029,
+        "lon": 17.93224,
+        "distance_m": 832,
+        "surface": "",
+        "access": "yes",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/138574314"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.939865,
+          59.330138
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 344084533,
+        "name": "",
+        "lat": 59.330138,
+        "lon": 17.939865,
+        "distance_m": 866,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/344084533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.934355,
+          59.334434
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 1542988015,
+        "name": "",
+        "lat": 59.334434,
+        "lon": 17.934355,
+        "distance_m": 930,
+        "surface": "",
+        "access": "yes",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/1542988015"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.933495,
+          59.335594
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 924583174,
+        "name": "",
+        "lat": 59.335594,
+        "lon": 17.933495,
+        "distance_m": 1019,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/924583174"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.945415,
+          59.33029
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 12110725473,
+        "name": "",
+        "lat": 59.33029,
+        "lon": 17.945415,
+        "distance_m": 1170,
+        "surface": "",
+        "access": "yes",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/node/12110725473"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.93072,
+          59.338289
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 507635746,
+        "name": "",
+        "lat": 59.338289,
+        "lon": 17.93072,
+        "distance_m": 1250,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/507635746"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.943202,
+          59.320118
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 11964344987,
+        "name": "",
+        "lat": 59.320118,
+        "lon": 17.943202,
+        "distance_m": 1282,
+        "surface": "",
+        "access": "yes",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/node/11964344987"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.94158,
+          59.335553
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 130551592,
+        "name": "",
+        "lat": 59.335553,
+        "lon": 17.94158,
+        "distance_m": 1285,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/130551592"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.908991,
+          59.319032
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 14079360601,
+        "name": "Barfotastigen",
+        "lat": 59.319032,
+        "lon": 17.908991,
+        "distance_m": 1321,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/node/14079360601"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.937536,
+          59.340804
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 738938175,
+        "name": "",
+        "lat": 59.340804,
+        "lon": 17.937536,
+        "distance_m": 1641,
+        "surface": "",
+        "access": "yes",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/738938175"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.942992,
+          59.339885
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 738936902,
+        "name": "",
+        "lat": 59.339885,
+        "lon": 17.942992,
+        "distance_m": 1707,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/738936902"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.951262,
+          59.336108
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 342801418,
+        "name": "",
+        "lat": 59.336108,
+        "lon": 17.951262,
+        "distance_m": 1750,
+        "surface": "",
+        "access": "",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/way/342801418"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.900815,
+          59.337293
+        ]
+      },
+      "properties": {
+        "osm_type": "node",
+        "osm_id": 8565869969,
+        "name": "",
+        "lat": 59.337293,
+        "lon": 17.900815,
+        "distance_m": 1788,
+        "surface": "",
+        "access": "customers",
+        "min_age": "",
+        "max_age": "",
+        "wheelchair": "",
+        "equipment": "",
+        "osm_url": "https://www.openstreetmap.org/node/8565869969"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.946961,
+          59.34029
+        ]
+      },
+      "properties": {
+        "osm_type": "way",
+        "osm_id": 738936915,
+        "name": "Galonparken",
+        "lat": 59.34029,
+        "lon": 17.946961,
+        "distance_m": 1880,
+        "surface": "",
+        "access": "yes",
+        "min_age": "1",
+        "max_age": "8",
+        "wheelchair": "",
+        "equipment": "theme",
+        "osm_url": "https://www.openstreetmap.org/way/738936915"
+      }
+    }
+  ]
+}

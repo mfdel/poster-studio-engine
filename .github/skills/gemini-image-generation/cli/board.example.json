@@ -1,0 +1,16 @@
+[
+  {
+    "prompt": "Wide establishing shot of a dim 17th-century study at night, one candle, muted near-black palette, low contrast, 16:9, painterly, no text.",
+    "out": "assets/beat01.png",
+    "ref": ["assets/style_ref.png"]
+  },
+  {
+    "prompt": "Same room and palette, closer on the writing desk with an open journal and quill, 16:9, no text.",
+    "out": "assets/beat02.png",
+    "ref": ["assets/style_ref.png"]
+  },
+  {
+    "prompt": "A dark, low-contrast night sky over a still sea, a single faint comet low on the horizon, no bright highlights, 16:9, no text.",
+    "out": "assets/beat03.png"
+  }
+]

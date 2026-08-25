@@ -1,0 +1,95 @@
+{
+  "name": "nocturne",
+  "label": "Nocturne",
+  "description": "The studio's night theme. A deep aubergine ground with a warm gold accent, built for light-and-dark subjects (the sun-year ring) but complete enough to render a map: roads step down in violet-greys, water sinks below the land, and the gold marker carries the same role the ochre pictogram does in Ink & Play. Shares Ink & Play's Spectral/Iowan serif so the two read as one shop.",
+  "palette": {
+    "page": "#1b1424",
+    "land": "#1b1424",
+    "water": "#150f1e",
+    "green": "#221a2c",
+    "coastline": "#4e2c3c",
+    "buildings": "#271f31",
+    "buildings_edge": "#3f3350",
+    "roads": {
+      "motorway": "#9a8da3",
+      "primary": "#8a7c93",
+      "secondary": "#6e6178",
+      "residential": "#544860",
+      "service": "#403552",
+      "path": "#332a44"
+    },
+    "playground_marker": "#e9b949",
+    "playground_marker_text": "#1b1424",
+    "home_marker": "#f3ece2",
+    "text": "#f3ece2",
+    "muted": "#8a7c93",
+    "annotation_box": "#221a2c",
+    "annotation_line": "#3a2c46",
+    "border": "#6e6178"
+  },
+  "road_weights": {
+    "motorway": 1.2,
+    "primary": 0.9,
+    "secondary": 0.6,
+    "residential": 0.42,
+    "service": 0.28,
+    "path": 0.18
+  },
+  "type": {
+    "title_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "label_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "body_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "title_weight": "500",
+    "title_tracking": 3.6,
+    "title_uppercase": true,
+    "subtitle_uppercase": false
+  },
+  "chart": {
+    "day": "#e9b949",
+    "night": "#150f1e",
+    "civil": "#a4552f",
+    "naut": "#4e2c3c",
+    "astro": "#271c2e",
+    "plot_bg": "#150f1e",
+    "curve": "#f3ece2",
+    "grid": "#3a2c46",
+    "axis": "#6e6178",
+    "marker": "#e9b949",
+    "quote": "#9a8da3"
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.2,
+    "playground_stroke": "#1b1424",
+    "playground_stroke_w": 1.4,
+    "icon_color": "#1b1424",
+    "icon_cycle": [
+      "swing",
+      "slide",
+      "seesaw",
+      "spinner",
+      "ball"
+    ],
+    "badge": "disc",
+    "badge_outline_color": "#f3ece2",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "numbered": false,
+    "home_style": "compass",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.55,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "thin",
+    "weight": 0.7,
+    "inset": 7.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

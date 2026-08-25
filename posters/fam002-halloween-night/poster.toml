@@ -1,0 +1,24 @@
+# Poster product manifest — read by posterlab.product (dashboard, tooling).
+[poster]
+id = "FAM-002"
+slug = "fam002-halloween-night"
+# Partitions this product's runs (data/runs/halloween/) and renders (output/halloween/).
+kind = "halloween"
+name = "Halloween Night Sheet"
+status = "listed"
+entry = "make.py"
+audience = "families with young children; seasonal print-at-home buyers"
+positioning = "a keepsake of one trick-or-treat night, not a map of who gives treats"
+
+[data]
+source = "OpenStreetMap via Overpass API (streets + building footprints)"
+license = "ODbL — © OpenStreetMap contributors"
+# ODbL attribution is rendered on every sheet; it must survive to print.
+attribution_required = true
+
+[commerce]
+sku_prefix = "HALMAP"
+# Print-at-home only. There is no print-on-demand SKU: the sheet is written on
+# with a marker on the night, so it ships as a digital download.
+vendor = "digital download"
+sizes = ["A4", "Letter"]

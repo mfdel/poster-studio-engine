@@ -1,0 +1,74 @@
+{
+  "name": "dino",
+  "label": "Dino Explorer",
+  "description": "A bright jungle-adventure look kids love. Pale mint paper, leafy greens, teal rivers and orange safari roads. Dino-green squircle badges with playground pictograms and a sunny orange house for home. Bold, outdoorsy and fun. Rounded Baloo 2.",
+  "palette": {
+    "page": "#eefbef",
+    "land": "#f4fbf3",
+    "water": "#37b6c9",
+    "green": "#6cc24a",
+    "coastline": "#1f97ab",
+    "roads": {
+      "motorway": "#ff8c2b",
+      "primary": "#ffb15c",
+      "secondary": "#f2d59a",
+      "residential": "#dcebc4",
+      "service": "#eef4dd",
+      "path": "#cfe6b6"
+    },
+    "playground_marker": "#2e9e57",
+    "playground_marker_text": "#ffffff",
+    "home_marker": "#ff8c2b",
+    "text": "#1f3a2a",
+    "muted": "#6f8a76",
+    "annotation_box": "#f7fcf4",
+    "annotation_line": "#cfe0c4",
+    "border": "#2e9e57"
+  },
+  "road_weights": {
+    "motorway": 1.25,
+    "primary": 0.95,
+    "secondary": 0.7,
+    "residential": 0.5,
+    "service": 0.32,
+    "path": 0.24
+  },
+  "type": {
+    "title_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "label_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "body_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "title_weight": "700",
+    "title_tracking": 0.5,
+    "title_uppercase": false,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.4,
+    "playground_stroke": "#eefbef",
+    "playground_stroke_w": 1.5,
+    "icon_color": "#ffffff",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "squircle",
+    "badge_outline_color": "#ff8c2b",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "numbered": false,
+    "home_style": "house",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.8,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "double",
+    "weight": 1.1,
+    "inset": 8.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

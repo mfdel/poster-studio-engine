@@ -1,0 +1,67 @@
+{
+  "name": "vintage",
+  "label": "Vintage",
+  "description": "Storybook / treasure-map. Aged sepia paper, muted desaturated water and greens, hand-lettered serif, a decorative double frame.",
+  "palette": {
+    "page": "#efe6d0",
+    "land": "#f2e9d2",
+    "water": "#bcc9b0",
+    "green": "#d3cfa0",
+    "coastline": "#9aa789",
+    "roads": {
+      "motorway": "#b07a4e",
+      "primary": "#c39a6b",
+      "secondary": "#cdb289",
+      "residential": "#d8c8a3",
+      "service": "#ddd0af",
+      "path": "#cbb98f"
+    },
+    "playground_marker": "#a6432a",
+    "playground_marker_text": "#f5ecd6",
+    "home_marker": "#5c3a1e",
+    "text": "#4a3417",
+    "muted": "#8a7351",
+    "annotation_box": "#f6efdb",
+    "annotation_line": "#c8b78f",
+    "border": "#5c3a1e"
+  },
+  "road_weights": {
+    "motorway": 1.05,
+    "primary": 0.85,
+    "secondary": 0.62,
+    "residential": 0.42,
+    "service": 0.28,
+    "path": 0.2
+  },
+  "type": {
+    "title_font": "\"Hoefler Text\", Georgia, \"Times New Roman\", serif",
+    "label_font": "Georgia, \"Times New Roman\", serif",
+    "body_font": "Georgia, \"Times New Roman\", serif",
+    "title_weight": "700",
+    "title_tracking": 1.5,
+    "title_uppercase": true,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "playground_radius": 3.2,
+    "playground_stroke": "#f5ecd6",
+    "playground_stroke_w": 0.5,
+    "numbered": true,
+    "home_style": "star",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.7,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "double",
+    "weight": 0.9,
+    "inset": 9.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

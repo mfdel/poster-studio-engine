@@ -1,0 +1,74 @@
+{
+  "name": "treasure",
+  "label": "Treasure Map",
+  "description": "Adventure-framed sibling of the vintage theme: warmer burnt-sienna parchment (not muted heirloom sepia), a deep aged-teal sea, wax-seal red numbered stops linked by a dotted pirate route, and a compass rose marking home. Hand-lettered serif.",
+  "palette": {
+    "page": "#e9d9ae",
+    "land": "#f0e2ba",
+    "water": "#5b7a72",
+    "green": "#c9b877",
+    "coastline": "#3f5951",
+    "roads": {
+      "motorway": "#9c5a2e",
+      "primary": "#b17a45",
+      "secondary": "#bd8f5e",
+      "residential": "#c9a578",
+      "service": "#d3b78e",
+      "path": "#a9865a"
+    },
+    "playground_marker": "#1c3f5f",
+    "playground_marker_text": "#f5ecd6",
+    "home_marker": "#3f5951",
+    "text": "#4a2f16",
+    "muted": "#8a6a3f",
+    "annotation_box": "#f3e6c1",
+    "annotation_line": "#c9ad78",
+    "border": "#4a2f16"
+  },
+  "road_weights": {
+    "motorway": 1.1,
+    "primary": 0.9,
+    "secondary": 0.66,
+    "residential": 0.46,
+    "service": 0.3,
+    "path": 0.22
+  },
+  "type": {
+    "title_font": "\"Hoefler Text\", Georgia, \"Times New Roman\", serif",
+    "label_font": "Georgia, \"Times New Roman\", serif",
+    "body_font": "Georgia, \"Times New Roman\", serif",
+    "title_weight": "700",
+    "title_tracking": 1.6,
+    "title_uppercase": true,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.0,
+    "playground_stroke": "#f5ecd6",
+    "playground_stroke_w": 1.2,
+    "icon_color": "#f5ecd6",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "ring",
+    "badge_outline_color": "#a6301f",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "trail_dash": "0.4 2.6",
+    "home_style": "compass",
+    "home_scale": 1.575
+  },
+  "map": {
+    "coastline_weight": 0.75,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "double",
+    "weight": 1.0,
+    "inset": 9.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

@@ -1,0 +1,28 @@
+# Poster product manifest — read by posterlab.product (dashboard, tooling).
+#
+# Draft: only research, plan docs and matplotlib exploration exist so far. The
+# build (solar.py + render.py + make.py, per
+# docs/multi_poster_strategy_and_sun_poster_plan.md) has not started, so there is
+# no `entry` yet and the dashboard lists this product as not buildable.
+[poster]
+id = "PRT-006"
+slug = "prt006-sun-year"
+# Will partition runs (data/runs/sun/) and renders (output/sun/) once it builds.
+kind = "sun"
+name = "Sun-Year Poster"
+status = "draft"
+audience = "adults ≥55°N; date-anchored gifting (birth, wedding, moving in)"
+positioning = "a year of light at one address, with one day marked"
+
+[data]
+# Daylight is computed locally from latitude + day-of-year (no data licence
+# attaches to the chart). Nominatim still geocodes the address, so the OSM credit
+# line stays on the poster whenever geocoding was used.
+source = "computed locally (NOAA solar equations); address geocoded via Nominatim"
+license = "n/a for the chart; ODbL credit retained for geocoding"
+attribution_required = true
+
+[commerce]
+sku_prefix = "SUNYR"
+vendor = "Prodigi"
+sizes = ["30x40", "40x50", "50x70"]

@@ -1,0 +1,29 @@
+# Python
+.venv/
+venv/
+env/
+*.egg-info/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# OS & Editor
+.DS_Store
+._*
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets & Environment
+.env
+.env.*
+!.env.example
+.etsy_tokens.json
+
+# Tooling / Scratch
+.playwright-mcp/
+temp_dir/
+scratch/

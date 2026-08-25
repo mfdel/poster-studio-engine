@@ -1,0 +1,74 @@
+{
+  "name": "meadow",
+  "label": "Meadow",
+  "description": "Soft botanical. Warm cream paper, muted sage greens, dusty-teal water, understated ochre roads. Kid-friendly playground pictograms in a forest-green disc; a little house marks home. Rounded, friendly Quicksand.",
+  "palette": {
+    "page": "#f4f1e8",
+    "land": "#f7f4ea",
+    "water": "#bcd0cf",
+    "green": "#cdddb8",
+    "coastline": "#a9c3bf",
+    "roads": {
+      "motorway": "#c9a24e",
+      "primary": "#ddc79a",
+      "secondary": "#e3ddcb",
+      "residential": "#ece6d6",
+      "service": "#f1ecdf",
+      "path": "#e6dfcd"
+    },
+    "playground_marker": "#5f7a4d",
+    "playground_marker_text": "#f7f4ea",
+    "home_marker": "#c26b4f",
+    "text": "#3c4a34",
+    "muted": "#8a927f",
+    "annotation_box": "#fbf9f2",
+    "annotation_line": "#d6d3c1",
+    "border": "#5f7a4d"
+  },
+  "road_weights": {
+    "motorway": 1.1,
+    "primary": 0.9,
+    "secondary": 0.65,
+    "residential": 0.45,
+    "service": 0.3,
+    "path": 0.2
+  },
+  "type": {
+    "title_font": "\"Quicksand\", \"Century Gothic\", \"Avenir Next\", sans-serif",
+    "label_font": "\"Quicksand\", \"Century Gothic\", \"Avenir Next\", sans-serif",
+    "body_font": "\"Quicksand\", \"Century Gothic\", \"Avenir Next\", sans-serif",
+    "title_weight": "600",
+    "title_tracking": 2.6,
+    "title_uppercase": true,
+    "subtitle_uppercase": true
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.2,
+    "playground_stroke": "#f4f1e8",
+    "playground_stroke_w": 1.4,
+    "icon_color": "#f7f4ea",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "disc",
+    "badge_outline_color": "#c26b4f",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "numbered": false,
+    "home_style": "house",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.7,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "thin",
+    "weight": 0.7,
+    "inset": 7.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

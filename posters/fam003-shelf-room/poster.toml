@@ -1,0 +1,35 @@
+# Poster product manifest — read by posterlab.product (dashboard, tooling).
+[poster]
+id = "FAM-003"
+slug = "fam003-shelf-room"
+# Partitions this product's renders (output/room/). There is no data run: the
+# artwork is generated, not fetched, so data/runs/room/ stays empty.
+kind = "room"
+name = "Shelf Room"
+status = "draft"
+entry = "make.py"
+audience = "parents of 3-8 year olds; dollhouse and small-world play; gift buyers"
+positioning = "a printable room that lines a cube shelf, not a sticker or a decal"
+
+[data]
+# The first product in the shop with no external data source.
+source = "none — original generated artwork"
+license = "original work, all rights reserved"
+attribution_required = false
+
+[commerce]
+sku_prefix = "SHELFROOM"
+# Print-at-home only: a print-on-demand vendor cannot ship 11 loose A4 panels
+# that the buyer must cut and glue.
+vendor = "digital download"
+sizes = ["A4", "Letter"]
+# Cube dimensions in millimetres. IKEA Kallax is 330 x 330 x 390 inside.
+# cover_depth stops short of the cube mouth; the gap hides behind the shelf lip.
+default_cube_mm = [330, 330, 390]
+default_cover_depth_mm = 360
+
+[compat]
+# Never put a trademark in the shop name, the title's first words, or the logo.
+# Listings say the dimension first and the brand second, as nominative fair use.
+statement = "Fits 33 x 33 cm / 13 x 13 in cube shelves"
+disclaimer = "Not affiliated with, endorsed by, or sponsored by Inter IKEA Systems B.V. IKEA and KALLAX are their trademarks."

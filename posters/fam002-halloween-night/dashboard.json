@@ -1,0 +1,53 @@
+{
+  "_comment": "Dashboard form for this poster. Read by studio/dashboard/dashboard.py; flags must match make.py's argparse. '@themes' and '@sizes' are expanded by the dashboard from studio/themes/ and posterlab.chrome.SIZES so the form never drifts from the code.",
+  "groups": ["Location", "Design", "Output"],
+  "recall": {
+    "label": "address",
+    "meta": [{"field": "radius_m", "suffix": " m"}],
+    "fill": {"address": "--address", "radius_m": "--radius"}
+  },
+  "schema": [
+    {"flag": "--address", "label": "Address", "type": "text", "group": "Location",
+     "default": "Vindögats väg 18C, Tygelsjö, Malmö, Sweden", "width": "full",
+     "help": "Street / area to centre the sheet on (geocoded via Nominatim)."},
+    {"flag": "--radius", "label": "Framed radius (m)", "type": "number", "group": "Location",
+     "default": 400, "min": 100, "step": 50,
+     "help": "How far around home the sheet frames. A child walks a few streets; at 400 m a house still prints wide enough to see."},
+    {"flag": "--fetch-radius", "label": "Fetched radius (m)", "type": "number", "group": "Location",
+     "default": "", "min": 100, "step": 50,
+     "help": "Box actually fetched from Overpass. Blank = framed radius × 1.5. Capped at 1000 m."},
+    {"flag": "--allow-wide", "label": "Lift the radius cap", "type": "checkbox", "group": "Location",
+     "default": false,
+     "help": "Fetch buildings over a box wider than the cap. One comparison render only — it is a heavy Overpass query."},
+    {"flag": "--mode", "label": "Mode", "type": "select", "group": "Location",
+     "default": "poster", "options": ["standard", "poster", "fresh"],
+     "help": "standard = data only · poster = data + render · fresh = refetch + render."},
+
+    {"flag": "--theme", "label": "Theme", "type": "select", "group": "Design",
+     "default": "lantern", "options": "@themes",
+     "help": "Lantern is the night theme; Ink prints the same sheet on cream. Or 'All themes'."},
+    {"flag": "--title", "label": "Title", "type": "text", "group": "Design",
+     "default": "Our Halloween Night", "width": "full"},
+    {"flag": "--subtitle", "label": "Subtitle", "type": "text", "group": "Design",
+     "default": "", "width": "full", "help": "Blank = geocoded locality."},
+    {"flag": "--layout", "label": "Layout", "type": "select", "group": "Design",
+     "default": "panel", "options": ["panel", "band", "sheet", "ledger", "bonus", "all"],
+     "help": "panel = framed map + bordered log · band/sheet/ledger = map bleeds to the paper edge, writing off the map · bonus = the standalone spotting game, no map · all = render every one."},
+    {"flag": "--size", "label": "Size", "type": "select", "group": "Design",
+     "default": "A4", "options": "@sizes",
+     "help": "The sheet is printed at home, so A4 and Letter are the sizes that matter."},
+    {"flag": "--orientation", "label": "Orientation", "type": "select", "group": "Design",
+     "default": "portrait", "options": ["portrait", "auto", "landscape"],
+     "help": "Portrait by default. The bleed layouts' band and column fractions are tuned for it."},
+    {"flag": "--night", "label": "Night", "type": "text", "group": "Design",
+     "default": "", "width": "full",
+     "help": "The date printed on the sheet, e.g. 31 October 2026."},
+
+    {"flag": "--out", "label": "Output dir", "type": "text", "group": "Output",
+     "default": "", "width": "full", "help": "Blank = output/halloween/<run-id>."},
+    {"flag": "--preview", "label": "Write PNG preview", "type": "checkbox", "group": "Output",
+     "default": true, "help": "Needed to show thumbnails on this dashboard."},
+    {"flag": "--zip", "label": "Assemble digital ZIP", "type": "checkbox", "group": "Output",
+     "default": false, "help": "Bundle PDFs + how-to + licence into a download ZIP."}
+  ]
+}

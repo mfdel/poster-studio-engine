@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poster Studio · dashboard</title>
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --panel: #ffffff;
+    --ink: #2c2a26;
+    --muted: #7c7669;
+    --line: #e5e0d6;
+    --brand: #e07a5f;
+    --brand-dark: #c85f45;
+    --accent: #3d7068;
+    --ok: #3d7068;
+    --err: #c0392b;
+    --code-bg: #1f2320;
+    --code-ink: #e6e6df;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+  }
+  header {
+    padding: 18px 24px;
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  header h1 { font-size: 18px; margin: 0; letter-spacing: .2px; }
+  header .tag { color: var(--muted); font-size: 13px; }
+  header .spacer { flex: 1; }
+  header .badge {
+    font-size: 12px; color: var(--accent);
+    border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px;
+    background: #fff;
+  }
+  main {
+    display: grid;
+    grid-template-columns: minmax(360px, 460px) 1fr;
+    gap: 20px;
+    padding: 20px 24px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .panel > .panel-head {
+    padding: 14px 16px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .panel > .panel-head h2 { font-size: 14px; margin: 0; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); }
+  .panel-body { padding: 16px; }
+
+  fieldset { border: none; margin: 0 0 6px; padding: 0; }
+  fieldset legend {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px;
+    color: var(--brand-dark); padding: 14px 0 8px; border-top: 1px dashed var(--line);
+    width: 100%;
+  }
+  fieldset:first-of-type legend { border-top: none; padding-top: 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-size: 13px; font-weight: 600; }
+  .field .help { font-size: 11.5px; color: var(--muted); }
+  .field input[type="text"], .field input[type="number"], .field select {
+    font: inherit; padding: 8px 10px; border: 1px solid var(--line);
+    border-radius: 9px; background: #fff; color: var(--ink); width: 100%;
+  }
+  .field input:focus, .field select:focus {
+    outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(224,122,95,.15);
+  }
+  .check {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 11px; border: 1px solid var(--line); border-radius: 9px; background: #fbfaf7;
+  }
+  .check input { width: 18px; height: 18px; accent-color: var(--brand); }
+  .check .txt { display: flex; flex-direction: column; }
+  .check .txt label { font-size: 13px; font-weight: 600; }
+  .check .txt .help { font-size: 11.5px; color: var(--muted); }
+
+  /* Recall a previous run */
+  .recall { margin-bottom: 16px; }
+  .recall-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px; }
+  .recall-head label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; color: var(--brand-dark); }
+  .recall-head .count { font-size: 11.5px; color: var(--muted); }
+  .recall-box { position: relative; }
+  .recall-ico { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 13px; opacity: .55; pointer-events: none; }
+  #recallSearch {
+    width: 100%; font: inherit; padding: 8px 10px 8px 32px;
+    border: 1px solid var(--line); border-radius: 9px; background: #fff; color: var(--ink);
+  }
+  #recallSearch:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(224,122,95,.15); }
+  .recall-list {
+    position: absolute; z-index: 30; top: calc(100% + 4px); left: 0; right: 0;
+    max-height: 300px; overflow: auto; background: #fff;
+    border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow);
+  }
+  .recall-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    width: 100%; text-align: left; background: #fff; border: none;
+    border-bottom: 1px solid var(--line); padding: 9px 12px; cursor: pointer; border-radius: 0;
+  }
+  .recall-item:last-child { border-bottom: none; }
+  .recall-item:hover { background: #fbf1ec; }
+  .ra-addr { font-size: 13px; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ra-meta { font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+  .recall-empty { padding: 10px 12px; color: var(--muted); font-size: 12.5px; }
+
+  .actions { display: flex; gap: 10px; padding: 14px 16px; border-top: 1px solid var(--line); align-items: center; flex-wrap: wrap; }
+  button {
+    font: inherit; font-weight: 600; cursor: pointer;
+    border-radius: 10px; padding: 9px 16px; border: 1px solid transparent;
+  }
+  button.primary { background: var(--brand); color: #fff; }
+  button.primary:hover { background: var(--brand-dark); }
+  button.primary:disabled { background: #d9b6ab; cursor: default; }
+  button.ghost { background: #fff; border-color: var(--line); color: var(--ink); }
+  button.ghost:hover { border-color: var(--brand); color: var(--brand-dark); }
+  .actions .spacer { flex: 1; }
+
+  .cmd {
+    margin: 0; padding: 12px 14px; background: var(--code-bg); color: var(--code-ink);
+    border-radius: 10px; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap; word-break: break-word; position: relative;
+  }
+  .cmd .copy {
+    position: absolute; top: 8px; right: 8px; font-size: 11px; padding: 4px 8px;
+    background: rgba(255,255,255,.1); color: #fff; border: none; border-radius: 6px;
+  }
+  .cmd .copy:hover { background: rgba(255,255,255,.22); }
+
+  #console {
+    background: var(--code-bg); color: var(--code-ink); border-radius: 10px;
+    padding: 12px 14px; font: 12.5px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap; word-break: break-word; min-height: 120px; max-height: 340px;
+    overflow: auto;
+  }
+  #console .l-err { color: #ff9b8a; }
+  #console .l-sys { color: #8fd0c4; }
+  #console .l-done { color: #a3e6a3; }
+
+  .status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+  .dot.run { background: var(--brand); animation: pulse 1s infinite; }
+  .dot.ok { background: var(--ok); }
+  .dot.err { background: var(--err); }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+
+  .previews { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 4px; }
+  .card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; }
+  .card a.imgwrap { display: block; background: #efece5; }
+  .card img { width: 100%; display: block; }
+  .card .meta { padding: 8px 10px; font-size: 12px; display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+  .card .meta .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .card .meta a { color: var(--brand-dark); text-decoration: none; font-weight: 600; }
+  .filelist { list-style: none; margin: 8px 0 0; padding: 0; }
+  .filelist li { display: flex; justify-content: space-between; gap: 10px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 9px; margin-bottom: 6px; background: #fbfaf7; font-size: 13px; }
+  .filelist li a { color: var(--brand-dark); font-weight: 600; text-decoration: none; }
+  .muted { color: var(--muted); }
+  .section-gap { margin-top: 16px; }
+  h3.sub { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 8px; }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🖼️ Poster Studio</h1>
+  <span class="tag" id="posterTag">control panel</span>
+  <span class="spacer"></span>
+  <span class="badge" id="attribution">Data © OpenStreetMap (ODbL)</span>
+</header>
+
+<main>
+  <!-- LEFT: parameter form -->
+  <section class="panel" aria-label="Parameters">
+    <div class="panel-head"><h2>Parameters</h2></div>
+    <div class="panel-body">
+      <div class="field full">
+        <label for="posterSelect">Poster</label>
+        <select id="posterSelect"></select>
+        <span class="help">Which product to generate — discovered from posters/*/poster.toml.</span>
+      </div>
+      <div class="recall">
+        <div class="recall-head">
+          <label for="recallSearch">Recall a previous run</label>
+          <span class="count" id="recallCount"></span>
+        </div>
+        <div class="recall-box">
+          <span class="recall-ico">🔍</span>
+          <input type="text" id="recallSearch" autocomplete="off"
+                 placeholder="Search addresses you've run before…" />
+          <div class="recall-list" id="recallList" hidden></div>
+        </div>
+      </div>
+      <form id="form"><!-- fields injected by JS --></form>
+    </div>
+    <div class="actions">
+      <button type="button" class="primary" id="run">Generate</button>
+      <button type="button" class="ghost" id="reset">Reset</button>
+      <span class="spacer"></span>
+      <span class="status"><span class="dot" id="dot"></span><span id="statusText">idle</span></span>
+    </div>
+  </section>
+
+  <!-- RIGHT: command + output -->
+  <section>
+    <div class="panel">
+      <div class="panel-head"><h2>Command</h2></div>
+      <div class="panel-body">
+        <pre class="cmd" id="cmd"><button type="button" class="copy" id="copyCmd">Copy</button><code id="cmdText"></code></pre>
+      </div>
+    </div>
+
+    <div class="panel section-gap">
+      <div class="panel-head"><h2>Run log</h2></div>
+      <div class="panel-body">
+        <div id="console"><span class="muted">Output will stream here when you generate a map.</span></div>
+        <div class="section-gap">
+          <h3 class="sub">Previews</h3>
+          <div class="previews" id="previews"><div class="empty">No previews yet. Tick “Write PNG preview” and generate a map.</div></div>
+        </div>
+        <div class="section-gap">
+          <h3 class="sub">Files produced</h3>
+          <ul class="filelist" id="files"><li class="empty">—</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let SCHEMA = [];
+let GROUPS = [];
+let ADDRESSES = [];
+let POSTER = null;          // selected poster kind, e.g. "map"
+let CMD_PREFIX = 'python';  // command shown in the Command panel
+let RECALL_VISIBLE = [];    // recall rows currently listed
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function quote(v) {
+  const s = String(v);
+  return /[\s"'$`\\]/.test(s) ? '"' + s.replace(/(["\\$`])/g, '\\$1') + '"' : s;
+}
+
+function fieldValue(item) {
+  const el = document.querySelector(`[name="${item.flag}"]`);
+  if (!el) return undefined;
+  if (item.type === 'checkbox') return el.checked;
+  return el.value;
+}
+
+function collectParams() {
+  const params = {};
+  for (const item of SCHEMA) {
+    const v = fieldValue(item);
+    if (v === undefined) continue;
+    params[item.flag] = v;
+  }
+  return params;
+}
+
+function buildDisplay() {
+  const parts = [CMD_PREFIX];
+  for (const item of SCHEMA) {
+    const v = fieldValue(item);
+    if (v === undefined) continue;
+    if (item.type === 'checkbox') { if (v) parts.push(item.flag); continue; }
+    const s = String(v).trim();
+    if (s === '') continue;
+    parts.push(item.flag, quote(s));
+  }
+  return parts.join(' ');
+}
+
+function updateCommand() { $('cmdText').textContent = buildDisplay(); }
+
+function makeField(item) {
+  if (item.type === 'checkbox') {
+    const wrap = document.createElement('div');
+    wrap.className = 'check';
+    wrap.innerHTML = `
+      <input type="checkbox" name="${item.flag}" id="f_${item.flag}" ${item.default ? 'checked' : ''} />
+      <span class="txt">
+        <label for="f_${item.flag}">${item.label}</label>
+        ${item.help ? `<span class="help">${item.help}</span>` : ''}
+      </span>`;
+    return wrap;
+  }
+  const wrap = document.createElement('div');
+  wrap.className = 'field' + (item.width === 'full' ? ' full' : '');
+  let control = '';
+  if (item.type === 'select') {
+    const opts = item.options.map(o => {
+      const value = typeof o === 'string' ? o : o.value;
+      const label = typeof o === 'string' ? o : o.label;
+      const sel = String(item.default) === String(value) ? 'selected' : '';
+      return `<option value="${value}" ${sel}>${label}</option>`;
+    }).join('');
+    control = `<select name="${item.flag}">${opts}</select>`;
+  } else if (item.type === 'number') {
+    const attrs = [
+      item.min !== undefined ? `min="${item.min}"` : '',
+      item.step !== undefined ? `step="${item.step}"` : '',
+    ].join(' ');
+    control = `<input type="number" name="${item.flag}" value="${item.default}" ${attrs} />`;
+  } else {
+    control = `<input type="text" name="${item.flag}" value="${(item.default ?? '').toString().replace(/"/g, '&quot;')}" placeholder="${item.placeholder || ''}" />`;
+  }
+  wrap.innerHTML = `<label>${item.label}</label>${control}${item.help ? `<span class="help">${item.help}</span>` : ''}`;
+  return wrap;
+}
+
+function renderForm() {
+  const form = $('form');
+  form.innerHTML = '';
+  for (const group of GROUPS) {
+    const fs = document.createElement('fieldset');
+    const legend = document.createElement('legend');
+    legend.textContent = group;
+    fs.appendChild(legend);
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    for (const item of SCHEMA.filter(s => s.group === group)) {
+      grid.appendChild(makeField(item));
+    }
+    fs.appendChild(grid);
+    form.appendChild(fs);
+  }
+  form.addEventListener('input', updateCommand);
+  form.addEventListener('change', updateCommand);
+  updateCommand();
+}
+
+function resetForm() {
+  for (const item of SCHEMA) {
+    const el = document.querySelector(`[name="${item.flag}"]`);
+    if (!el) continue;
+    if (item.type === 'checkbox') el.checked = !!item.default;
+    else el.value = item.default ?? '';
+  }
+  updateCommand();
+}
+
+function setStatus(kind, text) {
+  const dot = $('dot');
+  dot.className = 'dot' + (kind ? ' ' + kind : '');
+  $('statusText').textContent = text;
+}
+
+// --- Recall a previous run -------------------------------------------------
+function fmtDate(runId) {
+  const m = /^(\d{4})(\d{2})(\d{2})/.exec(runId || '');
+  return m ? `${m[1]}-${m[2]}-${m[3]}` : '';
+}
+
+function fillFromRun(fill) {
+  // `fill` maps CLI flags -> values, as described by the product's
+  // dashboard.json "recall" block, so this works for any poster type.
+  for (const [flag, value] of Object.entries(fill || {})) {
+    const el = document.querySelector(`[name="${flag}"]`);
+    if (el && value !== null && value !== undefined) el.value = value;
+  }
+  updateCommand();
+}
+
+function renderRecall(filter) {
+  const list = $('recallList');
+  const q = (filter || '').trim().toLowerCase();
+  const items = (q ? ADDRESSES.filter(a => a.label.toLowerCase().includes(q)) : ADDRESSES);
+  if (!items.length) {
+    list.innerHTML = ADDRESSES.length
+      ? '<div class="recall-empty">No previous run matches that.</div>'
+      : '<div class="recall-empty">No previous runs saved yet.</div>';
+    list.hidden = false;
+    return;
+  }
+  RECALL_VISIBLE = items;
+  list.innerHTML = items.slice(0, 50).map((a, i) => `
+    <button type="button" class="recall-item" data-idx="${i}">
+      <span class="ra-addr">${esc(a.label)}</span>
+      <span class="ra-meta">${esc(a.meta || '')}${a.latest ? ' · ' + fmtDate(a.latest) : ''}</span>
+    </button>`).join('');
+  list.hidden = false;
+}
+
+function logLine(text, cls) {
+  const con = $('console');
+  if (con.dataset.fresh !== '1') { con.innerHTML = ''; con.dataset.fresh = '1'; }
+  const span = document.createElement('span');
+  if (cls) span.className = cls;
+  span.textContent = text + '\n';
+  con.appendChild(span);
+  con.scrollTop = con.scrollHeight;
+}
+
+function renderResult(res) {
+  const imgs = (res.files || []).filter(f => f.rel.toLowerCase().endsWith('.png'));
+  const others = (res.files || []).filter(f => !f.rel.toLowerCase().endsWith('.png'));
+
+  const prev = $('previews');
+  if (imgs.length) {
+    prev.innerHTML = imgs.map(f => `
+      <div class="card">
+        <a class="imgwrap" href="/output/${encodeURI(f.rel)}" target="_blank" rel="noopener">
+          <img loading="lazy" src="/output/${encodeURI(f.rel)}?t=${Date.now()}" alt="${f.name}" />
+        </a>
+        <div class="meta"><span class="name" title="${f.name}">${f.name}</span>
+          <a href="/output/${encodeURI(f.rel)}" download>open</a></div>
+      </div>`).join('');
+  } else {
+    prev.innerHTML = '<div class="empty">No PNG previews (tick “Write PNG preview” to see thumbnails).</div>';
+  }
+
+  const files = $('files');
+  const all = res.files || [];
+  if (all.length) {
+    files.innerHTML = all.map(f => `
+      <li><span class="name" title="${f.rel}">${f.name}</span>
+          <a href="/output/${encodeURI(f.rel)}" download>${(f.size/1024).toFixed(0)} KB · download</a></li>`).join('');
+  } else {
+    files.innerHTML = '<li class="empty">No new files were produced.</li>';
+  }
+}
+
+async function run() {
+  const params = collectParams();
+  if ('--address' in params) {
+    const addr = params['--address'];
+    if (!addr || !addr.trim()) { alert('Please enter an address.'); return; }
+  }
+  params['_poster'] = POSTER;
+
+  $('run').disabled = true;
+  $('console').dataset.fresh = '0';
+  $('previews').innerHTML = '<div class="empty">Working…</div>';
+  $('files').innerHTML = '<li class="empty">—</li>';
+  setStatus('run', 'running…');
+
+  try {
+    const resp = await fetch('/api/run', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params),
+    });
+    if (!resp.ok || !resp.body) { throw new Error('server error ' + resp.status); }
+
+    const reader = resp.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '';
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      let idx;
+      while ((idx = buf.indexOf('\n')) >= 0) {
+        const raw = buf.slice(0, idx);
+        buf = buf.slice(idx + 1);
+        if (!raw.trim()) continue;
+        let msg;
+        try { msg = JSON.parse(raw); } catch { logLine(raw); continue; }
+        if (msg.type === 'command') { logLine('$ ' + msg.display, 'l-sys'); }
+        else if (msg.type === 'log') { logLine(msg.line, msg.stream === 'err' ? 'l-err' : ''); }
+        else if (msg.type === 'error') { logLine('ERROR: ' + msg.message, 'l-err'); }
+        else if (msg.type === 'result') {
+          const okCode = msg.code === 0;
+          logLine(okCode ? `\n✓ done (exit ${msg.code})` : `\n✗ exited with code ${msg.code}`, okCode ? 'l-done' : 'l-err');
+          setStatus(okCode ? 'ok' : 'err', okCode ? 'done' : 'failed (exit ' + msg.code + ')');
+          renderResult(msg);
+        }
+      }
+    }
+  } catch (e) {
+    logLine('ERROR: ' + e.message, 'l-err');
+    setStatus('err', 'error');
+  } finally {
+    $('run').disabled = false;
+  }
+}
+
+function renderPosterSelect(posters) {
+  const sel = $('posterSelect');
+  sel.innerHTML = posters.map(p => {
+    const suffix = p.buildable ? '' : ` — ${p.status}, no CLI yet`;
+    return `<option value="${p.value}" ${p.value === POSTER ? 'selected' : ''}
+                    ${p.buildable ? '' : 'disabled'}>${esc(p.id)} · ${esc(p.label)}${suffix}</option>`;
+  }).join('');
+}
+
+async function loadPoster(kind) {
+  const q = kind ? `?poster=${encodeURIComponent(kind)}` : '';
+  const meta = await (await fetch('/api/meta' + q)).json();
+  POSTER = meta.poster;
+  SCHEMA = meta.schema;
+  GROUPS = meta.groups;
+  CMD_PREFIX = meta.command_prefix || 'python';
+  $('posterTag').textContent = `${meta.id} · ${meta.name}`;
+  if (meta.attribution) $('attribution').textContent = meta.attribution;
+  renderPosterSelect(meta.posters);
+  renderForm();
+  await loadRecall();
+}
+
+async function loadRecall() {
+  try {
+    const data = await (await fetch(`/api/addresses?poster=${encodeURIComponent(POSTER)}`)).json();
+    ADDRESSES = data.addresses || [];
+  } catch { ADDRESSES = []; }
+  $('recallCount').textContent = ADDRESSES.length ? `${ADDRESSES.length} saved` : 'none yet';
+}
+
+async function init() {
+  await loadPoster(null);
+  $('posterSelect').addEventListener('change', (e) => loadPoster(e.target.value));
+  $('run').addEventListener('click', run);
+  $('reset').addEventListener('click', resetForm);
+  $('copyCmd').addEventListener('click', async () => {
+    await navigator.clipboard.writeText(buildDisplay());
+    const b = $('copyCmd'); const t = b.textContent; b.textContent = 'Copied!';
+    setTimeout(() => (b.textContent = t), 1200);
+  });
+
+  // Recall-a-previous-run search box
+  const search = $('recallSearch');
+  const list = $('recallList');
+  search.addEventListener('focus', () => renderRecall(search.value));
+  search.addEventListener('input', () => renderRecall(search.value));
+  list.addEventListener('mousedown', (e) => {
+    const btn = e.target.closest('.recall-item');
+    if (!btn) return;
+    e.preventDefault();
+    const row = RECALL_VISIBLE[Number(btn.dataset.idx)];
+    if (row) fillFromRun(row.fill);
+    search.value = '';
+    list.hidden = true;
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.recall-box')) list.hidden = true;
+  });
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "run_id": "20260819-203412__chestnut_street_salem_massachusetts_usa__r300__a6aebef9",
+  "kind": "halloween",
+  "created": "2026-08-19T20:34:12",
+  "cache_key": "a6aebef9",
+  "address": "Chestnut Street, Salem, Massachusetts, USA",
+  "home": {
+    "lat": 42.5193819,
+    "lon": -70.9010761,
+    "display_name": "Chestnut Street, Federal Street District, North Salem, Salem, Essex County, Massachusetts, 01970, United States"
+  },
+  "frame_radius_m": 300,
+  "fetch_radius_m": 450,
+  "counts": {
+    "basemap_layers": {
+      "roads": 559,
+      "green": 17,
+      "water": 6,
+      "buildings": 961
+    }
+  },
+  "source": "OpenStreetMap via Overpass API",
+  "license": "ODbL - © OpenStreetMap contributors"
+}

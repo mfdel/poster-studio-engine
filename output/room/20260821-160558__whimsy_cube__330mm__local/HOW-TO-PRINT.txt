@@ -1,0 +1,18 @@
+HOW TO PRINT
+============
+
+1. Print every page at 100 percent. Turn off "Fit to page" and "Shrink to fit".
+2. Measure the square on page 1. It must be 50 mm across. If it is not, print again.
+3. Use A4 paper. Thicker paper holds its shape better. 160 gsm is ideal.
+4. Cut each panel on the dashed line.
+5. Page 2 shows where each panel goes. The panel name is printed in the margin.
+6. Glue the grey strips. A grey strip always goes UNDER the next panel.
+7. Fit the floor first. Then the back. Then the two side walls.
+
+Pack
+----
+Cube inside size: 330 x 330 x 390 mm
+Print mode: Eco
+Sheets of artwork: A4 11
+Overlap on every join: 10 mm
+Paper covered by artwork: A4 87%

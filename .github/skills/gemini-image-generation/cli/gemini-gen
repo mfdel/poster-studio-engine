@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+# gemini-gen — wrapper that finds node + the bundled playwright-core, then runs the CLI.
+# Node/playwright aren't on the default PATH here, so discovery lives in the wrapper and
+# the .mjs stays clean (it reads GEMINI_PWCORE from the environment).
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# --- account selection ---------------------------------------------------------
+# `--account NAME` picks a Google account by setting GEMINI_PROFILE and GEMINI_PORT
+# *together*. Setting only one is the failure mode this exists to prevent: the CLI
+# probes the CDP port before it looks at the profile, so a stale browser on the old
+# port gets reused and the run silently bills the wrong account's quota.
+# The flag wins over any exported GEMINI_PROFILE/GEMINI_PORT — a forgotten export is
+# exactly what it's guarding against. Written for bash 3.2 (macOS stock).
+ACCOUNT=""
+ARGS=()
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --account)   ACCOUNT="${2:-}"; shift; [ $# -gt 0 ] && shift ;;
+    --account=*) ACCOUNT="${1#*=}"; shift ;;
+    *)           ARGS+=("$1"); shift ;;
+  esac
+done
+
+if [ -n "$ACCOUNT" ]; then
+  ACCOUNT="$(printf '%s' "$ACCOUNT" | tr '[:upper:]' '[:lower:]')"
+  case "$ACCOUNT" in
+    *[!a-z0-9_-]*|-*|"")
+      echo "{\"ok\":false,\"stage\":\"account\",\"error\":\"bad --account name '$ACCOUNT' (use a-z 0-9 _ -)\"}"; exit 1 ;;
+  esac
+  if [ "$ACCOUNT" = "a" ] || [ "$ACCOUNT" = "default" ]; then
+    # account 'a' is the original single-account setup — keep its profile and port
+    # so existing signed-in state and any running browser keep working untouched.
+    GEMINI_PROFILE="$HOME/.gemini-cli-profile"
+    GEMINI_PORT=9333
+  else
+    # Deterministic port per name, so the same account always lands on the same one
+    # and two accounts get two browsers. A hash can collide; the .mjs pins each
+    # profile to its signed-in address and refuses a mismatch, so a collision fails
+    # loudly instead of quietly generating on the wrong account.
+    GEMINI_PROFILE="$HOME/.gemini-cli-profile-$ACCOUNT"
+    GEMINI_PORT=$(( 9333 + $(printf '%s' "$ACCOUNT" | cksum | awk '{print ($1 % 90) + 1}') ))
+  fi
+  export GEMINI_PROFILE GEMINI_PORT
+fi
+set -- ${ARGS[@]+"${ARGS[@]}"}
+
+# --- locate node ---
+NODE_BIN="$(command -v node || true)"
+if [ -z "$NODE_BIN" ]; then
+  for c in "$HOME"/.nvm/versions/node/*/bin/node /usr/local/bin/node /opt/homebrew/bin/node; do
+    [ -x "$c" ] && NODE_BIN="$c" && break
+  done
+fi
+[ -n "$NODE_BIN" ] || { echo '{"ok":false,"stage":"bootstrap","error":"node not found"}'; exit 1; }
+
+# --- locate playwright-core (bundled inside @playwright/mcp) ---
+if [ -z "${GEMINI_PWCORE:-}" ]; then
+  CANDS=()
+  # global module roots relative to the node binary, plus nvm installs
+  NODE_DIR="$(dirname "$NODE_BIN")"
+  CANDS+=("$NODE_DIR/../lib/node_modules")
+  for d in "$HOME"/.nvm/versions/node/*/lib/node_modules; do CANDS+=("$d"); done
+  CANDS+=("/usr/local/lib/node_modules" "/opt/homebrew/lib/node_modules")
+  for root in "${CANDS[@]}"; do
+    p="$root/@playwright/mcp/node_modules/playwright-core/index.mjs"
+    [ -f "$p" ] && GEMINI_PWCORE="$p" && break
+  done
+fi
+[ -n "${GEMINI_PWCORE:-}" ] || { echo '{"ok":false,"stage":"bootstrap","error":"playwright-core not found (install @playwright/mcp -g)"}'; exit 1; }
+export GEMINI_PWCORE
+
+exec "$NODE_BIN" "$DIR/gemini_gen.mjs" "$@"

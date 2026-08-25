@@ -1,0 +1,26 @@
+{
+  "run_id": "20260825-112752__rättviksvägen_18_167_75_bromma__r1000__8d0db7b7",
+  "kind": "map",
+  "created": "2026-08-25T11:27:52",
+  "cache_key": "8d0db7b7",
+  "address": "Rättviksvägen 18, 167 75 Bromma",
+  "home": {
+    "lat": 59.3273583,
+    "lon": 17.925606,
+    "display_name": "18, Rättviksvägen, Nockeby, Bromma stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 167 74, Sverige"
+  },
+  "radius_m": 1000,
+  "merge_threshold_m": 60.0,
+  "basemap_radius_m": 1500,
+  "buildings": false,
+  "counts": {
+    "playgrounds": 21,
+    "basemap_layers": {
+      "roads": 1532,
+      "green": 210,
+      "water": 7
+    }
+  },
+  "source": "OpenStreetMap via Overpass API",
+  "license": "ODbL - © OpenStreetMap contributors"
+}

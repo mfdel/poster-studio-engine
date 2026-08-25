@@ -1,0 +1,22 @@
+# Poster product manifest — read by posterlab.product (dashboard, tooling).
+[poster]
+id = "FAM-001"
+slug = "fam001-playground-map"
+# Partitions this product's runs (data/runs/map/) and renders (output/map/).
+kind = "map"
+name = "Playground Map"
+status = "live"
+entry = "make.py"
+audience = "families with young children; new-parent / baby-shower gifting"
+positioning = "a keepsake + family ritual, not a playground finder"
+
+[data]
+source = "OpenStreetMap via Overpass API (leisure=playground)"
+license = "ODbL — © OpenStreetMap contributors"
+# ODbL attribution is rendered on every poster; it must survive to print.
+attribution_required = true
+
+[commerce]
+sku_prefix = "PGMAP"
+vendor = "Prodigi"
+sizes = ["30x40", "40x50", "50x70"]

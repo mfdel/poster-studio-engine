@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "queries": {
+    "8d0db7b7": {
+      "kind": "map",
+      "runs": [
+        "20260825-112752__rättviksvägen_18_167_75_bromma__r1000__8d0db7b7"
+      ],
+      "address": "Rättviksvägen 18, 167 75 Bromma",
+      "radius_m": 1000,
+      "merge_threshold_m": 60.0,
+      "latest": "20260825-112752__rättviksvägen_18_167_75_bromma__r1000__8d0db7b7"
+    },
+    "a6aebef9": {
+      "kind": "halloween",
+      "runs": [
+        "20260819-203412__chestnut_street_salem_massachusetts_usa__r300__a6aebef9"
+      ],
+      "address": "Chestnut Street, Salem, Massachusetts, USA",
+      "radius_m": 300,
+      "latest": "20260819-203412__chestnut_street_salem_massachusetts_usa__r300__a6aebef9"
+    }
+  }
+}

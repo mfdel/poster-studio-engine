@@ -1,0 +1,75 @@
+{
+  "name": "bubblegum",
+  "label": "Bubblegum Pop",
+  "description": "Candy-shop colours turned all the way up. Pale pink paper, turquoise water, hot-pink roads and grape-purple balloon badges linked by a dashed sweet-trail. A pink heart marks home. Sugary, girly, joyful. Rounded Baloo 2.",
+  "palette": {
+    "page": "#fff0f6",
+    "land": "#fff6fb",
+    "water": "#7fe0e0",
+    "green": "#b9ec8a",
+    "coastline": "#4fc7c7",
+    "roads": {
+      "motorway": "#ff5ea8",
+      "primary": "#ff92c2",
+      "secondary": "#ffbcda",
+      "residential": "#ffd9ea",
+      "service": "#ffe9f3",
+      "path": "#f7cfe6"
+    },
+    "playground_marker": "#b45ce0",
+    "playground_marker_text": "#ffffff",
+    "home_marker": "#ff5ea8",
+    "text": "#5a2a52",
+    "muted": "#a884a0",
+    "annotation_box": "#fff7fb",
+    "annotation_line": "#f2c9e0",
+    "border": "#b45ce0"
+  },
+  "road_weights": {
+    "motorway": 1.2,
+    "primary": 0.95,
+    "secondary": 0.68,
+    "residential": 0.48,
+    "service": 0.3,
+    "path": 0.22
+  },
+  "type": {
+    "title_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "label_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "body_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "title_weight": "700",
+    "title_tracking": 0.5,
+    "title_uppercase": false,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.4,
+    "playground_stroke": "#fff0f6",
+    "playground_stroke_w": 1.5,
+    "icon_color": "#ffffff",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "balloon",
+    "badge_outline_color": "#5a2a52",
+    "badge_outline_width": 0.6,
+    "trail": true,
+    "trail_dash": "0.6 3.4",
+    "numbered": false,
+    "home_style": "heart",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.75,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "thin",
+    "weight": 0.9,
+    "inset": 7.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

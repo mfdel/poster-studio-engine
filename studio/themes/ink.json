@@ -1,0 +1,79 @@
+{
+  "name": "ink",
+  "label": "Ink & Play",
+  "description": "Elegant near-monochrome linework. Warm off-white paper, soft graphite-grey roads by weight, water and green barely tinted. A single warm-ochre accent for the playground pictograms keeps it playful; an ink star marks home. Refined Spectral serif.",
+  "palette": {
+    "page": "#f6f3ec",
+    "land": "#f6f3ec",
+    "water": "#e2e6e0",
+    "green": "#eae7dd",
+    "coastline": "#b9b4a6",
+    "buildings": "#e4dfd1",
+    "buildings_edge": "#c2bcaa",
+    "roads": {
+      "motorway": "#5d584d",
+      "primary": "#767164",
+      "secondary": "#928d7f",
+      "residential": "#a8a396",
+      "service": "#bcb8ab",
+      "path": "#c9c5b9"
+    },
+    "playground_marker": "#b98a3c",
+    "playground_marker_text": "#f6f3ec",
+    "home_marker": "#26231d",
+    "text": "#26231d",
+    "muted": "#8a8578",
+    "annotation_box": "#faf8f2",
+    "annotation_line": "#d9d4c8",
+    "border": "#26231d"
+  },
+  "road_weights": {
+    "motorway": 1.2,
+    "primary": 0.9,
+    "secondary": 0.6,
+    "residential": 0.42,
+    "service": 0.28,
+    "path": 0.18
+  },
+  "type": {
+    "title_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "label_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "body_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "title_weight": "500",
+    "title_tracking": 3.6,
+    "title_uppercase": true,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.2,
+    "playground_stroke": "#f6f3ec",
+    "playground_stroke_w": 1.4,
+    "icon_color": "#f6f3ec",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "disc",
+    "badge_outline_color": "#26231d",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "numbered": false,
+    "home_style": "compass",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.55,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "decor": {
+    "dir": "lantern"
+  },
+  "border": {
+    "style": "thin",
+    "weight": 0.7,
+    "inset": 7.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

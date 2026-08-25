@@ -1,0 +1,67 @@
+{
+  "name": "whimsy",
+  "label": "Whimsy",
+  "description": "Kid-facing, warm and hand-illustrated. Cream paper, bright playful markers, rounded strokes, a friendly rounded sans. The intended brand moat.",
+  "palette": {
+    "page": "#fbf6ea",
+    "land": "#fdf8ec",
+    "water": "#9fd3e0",
+    "green": "#bfe0a8",
+    "coastline": "#6fbccb",
+    "roads": {
+      "motorway": "#f4a15a",
+      "primary": "#f6c98a",
+      "secondary": "#efd9b0",
+      "residential": "#efe6cf",
+      "service": "#f3ecd9",
+      "path": "#e6d8b8"
+    },
+    "playground_marker": "#ef5a5a",
+    "playground_marker_text": "#ffffff",
+    "home_marker": "#e0455f",
+    "text": "#4a3b2a",
+    "muted": "#9a8a72",
+    "annotation_box": "#fffdf6",
+    "annotation_line": "#e3d3ad",
+    "border": "#e0455f"
+  },
+  "road_weights": {
+    "motorway": 1.2,
+    "primary": 0.95,
+    "secondary": 0.7,
+    "residential": 0.5,
+    "service": 0.32,
+    "path": 0.24
+  },
+  "type": {
+    "title_font": "\"Chalkboard SE\", \"Comic Sans MS\", \"Trebuchet MS\", sans-serif",
+    "label_font": "\"Trebuchet MS\", \"Avenir Next\", sans-serif",
+    "body_font": "\"Trebuchet MS\", \"Avenir Next\", sans-serif",
+    "title_weight": "700",
+    "title_tracking": 0.5,
+    "title_uppercase": false,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "playground_radius": 3.6,
+    "playground_stroke": "#ffffff",
+    "playground_stroke_w": 0.7,
+    "numbered": true,
+    "home_style": "heart",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.7,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "double",
+    "weight": 1.0,
+    "inset": 8.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

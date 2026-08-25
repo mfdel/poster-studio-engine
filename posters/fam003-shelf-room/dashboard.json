@@ -1,0 +1,28 @@
+{
+  "_comment": "Dashboard form for FAM-003. Read by studio/dashboard/dashboard.py; flags must match make.py's argparse. '@themes' is expanded from studio/themes/. This product fetches nothing, so it has no recall block.",
+  "groups": ["Cube", "Design", "Output"],
+  "schema": [
+    {"flag": "--cube", "label": "Inside size (mm)", "type": "text", "group": "Cube",
+     "default": "330x330x390", "width": "full",
+     "help": "Width x height x depth of the shelf opening. 330x330x390 is IKEA Kallax. Measure the opening, not the outside of the unit."},
+    {"flag": "--cover-depth", "label": "Depth covered (mm)", "type": "number", "group": "Cube",
+     "default": 360, "min": 100, "step": 10,
+     "help": "How far forward the floor and walls reach. Stopping 30 mm short hides behind the shelf lip and saves a sheet."},
+    {"flag": "--ceiling", "label": "Print the ceiling", "type": "checkbox", "group": "Cube",
+     "default": false,
+     "help": "Adds a fifth face. It is unlit and barely seen. It costs 2 more sheets on A4 and 3 on Letter."},
+
+    {"flag": "--theme", "label": "Theme", "type": "select", "group": "Design",
+     "default": "whimsy", "options": "@themes",
+     "help": "The shop theme the room is drawn in. Room colours are derived from the theme palette."},
+    {"flag": "--size", "label": "Paper", "type": "select", "group": "Design",
+     "default": "A4", "options": ["A4", "Letter", "both"],
+     "help": "Home paper only. 'both' writes one PDF per paper size into the same bundle."},
+    {"flag": "--easy", "label": "Easy print mode", "type": "checkbox", "group": "Design",
+     "default": false,
+     "help": "One panel per sheet. 16 sheets instead of 11, but no sheet holds two panels."},
+
+    {"flag": "--preview", "label": "Write PNG preview", "type": "checkbox", "group": "Output",
+     "default": true, "help": "Needed to show thumbnails on this dashboard."}
+  ]
+}

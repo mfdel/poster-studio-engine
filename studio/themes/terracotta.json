@@ -1,0 +1,74 @@
+{
+  "name": "terracotta",
+  "label": "Terracotta",
+  "description": "Warm earth / Mediterranean nursery. Sand paper, olive greens, clay roads. Deep-terracotta rounded-square playground markers, an amber sun for home, a double clay frame. Cozy Bitter slab serif.",
+  "palette": {
+    "page": "#f0e4d4",
+    "land": "#f3e8d8",
+    "water": "#aec1bb",
+    "green": "#c6c496",
+    "coastline": "#b0a882",
+    "roads": {
+      "motorway": "#c06a45",
+      "primary": "#d59b73",
+      "secondary": "#e0c3a3",
+      "residential": "#ead9c2",
+      "service": "#efe4d2",
+      "path": "#e2d0b6"
+    },
+    "playground_marker": "#9c4a2f",
+    "playground_marker_text": "#f0e4d4",
+    "home_marker": "#d98b3f",
+    "text": "#4a2f22",
+    "muted": "#9a7d68",
+    "annotation_box": "#f7eede",
+    "annotation_line": "#dcc7ad",
+    "border": "#9c4a2f"
+  },
+  "road_weights": {
+    "motorway": 1.1,
+    "primary": 0.9,
+    "secondary": 0.65,
+    "residential": 0.45,
+    "service": 0.3,
+    "path": 0.2
+  },
+  "type": {
+    "title_font": "\"Bitter\", \"Roboto Slab\", Georgia, serif",
+    "label_font": "\"Bitter\", \"Roboto Slab\", Georgia, serif",
+    "body_font": "\"Bitter\", \"Roboto Slab\", Georgia, serif",
+    "title_weight": "700",
+    "title_tracking": 1.6,
+    "title_uppercase": true,
+    "subtitle_uppercase": true
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.2,
+    "playground_stroke": "#f0e4d4",
+    "playground_stroke_w": 1.4,
+    "icon_color": "#f0e4d4",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "squircle",
+    "badge_outline_color": "#4a2f22",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "numbered": false,
+    "home_style": "sun",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.75,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "double",
+    "weight": 1.0,
+    "inset": 8.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

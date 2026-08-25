@@ -1,0 +1,75 @@
+{
+  "name": "trailhead",
+  "label": "Trailhead",
+  "description": "Adventure / treasure-map. Warm parchment, faded olive greens, sepia roads. Stamp-ring playground markers linked by a dashed trail; a compass rose marks home. Editorial DM Serif title with Space Mono coordinates.",
+  "palette": {
+    "page": "#efe6d2",
+    "land": "#f0e7d4",
+    "water": "#b9c4bf",
+    "green": "#d3cba6",
+    "coastline": "#b09a6e",
+    "roads": {
+      "motorway": "#a5794a",
+      "primary": "#b89263",
+      "secondary": "#cdbc98",
+      "residential": "#d8cbaa",
+      "service": "#e0d6bb",
+      "path": "#d2c39f"
+    },
+    "playground_marker": "#7a4a2e",
+    "playground_marker_text": "#efe6d2",
+    "home_marker": "#7a4a2e",
+    "text": "#4a3524",
+    "muted": "#9a8663",
+    "annotation_box": "#f6efdf",
+    "annotation_line": "#d8c8a4",
+    "border": "#7a4a2e"
+  },
+  "road_weights": {
+    "motorway": 1.1,
+    "primary": 0.9,
+    "secondary": 0.65,
+    "residential": 0.45,
+    "service": 0.3,
+    "path": 0.2
+  },
+  "type": {
+    "title_font": "\"DM Serif Display\", \"Playfair Display\", Georgia, serif",
+    "label_font": "\"Space Mono\", \"Courier New\", monospace",
+    "body_font": "\"Space Mono\", \"Courier New\", monospace",
+    "title_weight": "400",
+    "title_tracking": 0.5,
+    "title_uppercase": false,
+    "subtitle_uppercase": true
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.2,
+    "playground_stroke": "#efe6d2",
+    "playground_stroke_w": 1.4,
+    "icon_color": "#efe6d2",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "ring",
+    "badge_outline_color": "#d99a4e",
+    "badge_outline_width": 0.6,
+    "trail": true,
+    "trail_dash": "0.6 3.4",
+    "numbered": false,
+    "home_style": "compass",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.75,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "double",
+    "weight": 1.0,
+    "inset": 8.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

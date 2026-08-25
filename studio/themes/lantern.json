@@ -1,0 +1,80 @@
+{
+  "name": "lantern",
+  "label": "Lantern",
+  "description": "The studio's night theme turned to autumn. Nocturne's deep plum ground, the same Spectral serif, and the same quiet violet-grey road hierarchy — but the accent moves from gold to one warm lantern amber, and the houses come forward as soft blocks with a lit edge. Built for the print-at-home neighbourhood sheet, where the streets are the walking route and the amber glyph is your own front door. No orange-and-black clip art: the poster still has to read as the same shop as Ink & Play.",
+  "palette": {
+    "page": "#171220",
+    "land": "#171220",
+    "water": "#192434",
+    "green": "#221c2f",
+    "coastline": "#3e2f45",
+    "roads": {
+      "motorway": "#a093ac",
+      "primary": "#8f829d",
+      "secondary": "#7b6d84",
+      "residential": "#6d5f78",
+      "service": "#50455c",
+      "path": "#42374e"
+    },
+    "buildings": "#372c46",
+    "buildings_edge": "#6b5480",
+    "playground_marker": "#eb8f3c",
+    "playground_marker_text": "#171220",
+    "home_marker": "#eb8f3c",
+    "text": "#f4ece1",
+    "muted": "#93849f",
+    "annotation_box": "#1e1829",
+    "annotation_line": "#413150",
+    "border": "#7a6b86"
+  },
+  "road_weights": {
+    "motorway": 1.2,
+    "primary": 0.9,
+    "secondary": 0.62,
+    "residential": 0.46,
+    "service": 0.3,
+    "path": 0.2
+  },
+  "type": {
+    "title_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "label_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "body_font": "\"Spectral\", \"Iowan Old Style\", Georgia, serif",
+    "title_weight": "500",
+    "title_tracking": 3.6,
+    "title_uppercase": true,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.2,
+    "playground_stroke": "#171220",
+    "playground_stroke_w": 1.4,
+    "icon_color": "#171220",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "disc",
+    "badge_outline_color": "#f4ece1",
+    "badge_outline_width": 0.6,
+    "trail": false,
+    "numbered": false,
+    "home_style": "house",
+    "home_scale": 0.9
+  },
+  "map": {
+    "coastline_weight": 0.55,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "building_edge_weight": 0.14,
+    "linecap": "round"
+  },
+  "decor": {
+    "dir": "lantern"
+  },
+  "border": {
+    "style": "thin",
+    "weight": 0.7,
+    "inset": 7.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}

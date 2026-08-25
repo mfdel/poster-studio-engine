@@ -1,0 +1,22 @@
+osm_type,osm_id,name,lat,lon,distance_m,surface,access,min_age,max_age,wheelchair,equipment,osm_url
+node,4648413053,,59.326736,17.933943,478,,,,,,,https://www.openstreetmap.org/node/4648413053
+way,138575212,,59.331319,17.930136,510,,,,,,,https://www.openstreetmap.org/way/138575212
+node,11964328304,,59.322714,17.92844,541,,,,,,,https://www.openstreetmap.org/node/11964328304
+way,678963935,Lekparken Operetten,59.328728,17.934816,544,,,,,,,https://www.openstreetmap.org/way/678963935
+way,141563451,Kaffekannan,59.333079,17.921221,683,,yes,,,,,https://www.openstreetmap.org/way/141563451
+node,4065873760,,59.322609,17.917093,716,,,,,,,https://www.openstreetmap.org/node/4065873760
+way,137944829,Rimiparken,59.329096,17.912063,792,,,,,,,https://www.openstreetmap.org/way/137944829
+way,138574314,Lekplatsen Skeden,59.334029,17.93224,832,,yes,,,,,https://www.openstreetmap.org/way/138574314
+way,344084533,,59.330138,17.939865,866,,,,,,,https://www.openstreetmap.org/way/344084533
+way,1542988015,,59.334434,17.934355,930,,yes,,,,,https://www.openstreetmap.org/way/1542988015
+way,924583174,,59.335594,17.933495,1019,,,,,,,https://www.openstreetmap.org/way/924583174
+node,12110725473,,59.33029,17.945415,1170,,yes,,,,,https://www.openstreetmap.org/node/12110725473
+way,507635746,,59.338289,17.93072,1250,,,,,,,https://www.openstreetmap.org/way/507635746
+node,11964344987,,59.320118,17.943202,1282,,yes,,,,,https://www.openstreetmap.org/node/11964344987
+way,130551592,,59.335553,17.94158,1285,,,,,,,https://www.openstreetmap.org/way/130551592
+node,14079360601,Barfotastigen,59.319032,17.908991,1321,,,,,,,https://www.openstreetmap.org/node/14079360601
+way,738938175,,59.340804,17.937536,1641,,yes,,,,,https://www.openstreetmap.org/way/738938175
+way,738936902,,59.339885,17.942992,1707,,,,,,,https://www.openstreetmap.org/way/738936902
+way,342801418,,59.336108,17.951262,1750,,,,,,,https://www.openstreetmap.org/way/342801418
+node,8565869969,,59.337293,17.900815,1788,,customers,,,,,https://www.openstreetmap.org/node/8565869969
+way,738936915,Galonparken,59.34029,17.946961,1880,,yes,1,8,,theme,https://www.openstreetmap.org/way/738936915

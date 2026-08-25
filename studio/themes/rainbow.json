@@ -1,0 +1,75 @@
+{
+  "name": "rainbow",
+  "label": "Rainbow Road",
+  "description": "Every road a different colour of the rainbow — red, orange, yellow, green, blue, purple — over bright blue water and grass green. Pink ring badges with playground pictograms, a purple compass for home, and a dashed rainbow trail. Maximum colour. Rounded Baloo 2.",
+  "palette": {
+    "page": "#fffdf5",
+    "land": "#fffef8",
+    "water": "#56c7ef",
+    "green": "#7fd873",
+    "coastline": "#2fb4e6",
+    "roads": {
+      "motorway": "#ff5a5a",
+      "primary": "#ff9f43",
+      "secondary": "#ffd23f",
+      "residential": "#4fd18b",
+      "service": "#5aa9ff",
+      "path": "#b06cf0"
+    },
+    "playground_marker": "#ff4f8b",
+    "playground_marker_text": "#ffffff",
+    "home_marker": "#7c4dff",
+    "text": "#2f2b40",
+    "muted": "#8a86a0",
+    "annotation_box": "#fffdf8",
+    "annotation_line": "#e5dff0",
+    "border": "#ff4f8b"
+  },
+  "road_weights": {
+    "motorway": 1.3,
+    "primary": 1.0,
+    "secondary": 0.75,
+    "residential": 0.55,
+    "service": 0.38,
+    "path": 0.3
+  },
+  "type": {
+    "title_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "label_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "body_font": "\"Baloo 2\", \"Trebuchet MS\", sans-serif",
+    "title_weight": "700",
+    "title_tracking": 0.5,
+    "title_uppercase": false,
+    "subtitle_uppercase": false
+  },
+  "markers": {
+    "style": "icon",
+    "playground_radius": 4.4,
+    "playground_stroke": "#fffdf5",
+    "playground_stroke_w": 1.5,
+    "icon_color": "#ffffff",
+    "icon_cycle": ["swing", "slide", "seesaw", "spinner", "ball"],
+    "badge": "ring",
+    "badge_outline_color": "#7c4dff",
+    "badge_outline_width": 0.6,
+    "trail": true,
+    "trail_dash": "0.6 3.4",
+    "numbered": false,
+    "home_style": "compass",
+    "home_scale": 1.5
+  },
+  "map": {
+    "coastline_weight": 0.8,
+    "green_opacity": 1.0,
+    "water_opacity": 1.0,
+    "linecap": "round"
+  },
+  "border": {
+    "style": "double",
+    "weight": 1.1,
+    "inset": 8.0
+  },
+  "texture": {
+    "background": "solid"
+  }
+}
